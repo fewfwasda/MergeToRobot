@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6450885596105628866}
   - component: {fileID: 8295986653758887162}
-  - component: {fileID: 4535868527317063220}
   - component: {fileID: 5178220435085683145}
   - component: {fileID: 5334830519576241492}
+  - component: {fileID: 4535868527317063220}
   m_Layer: 0
   m_Name: Capacitor
   m_TagString: Untagged
@@ -90,34 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4535868527317063220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5123363324757990277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 761262b8798d0ed4c9a45e1591672e09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  evolution: 5
-  partsRobot:
-  - {fileID: 8291921533720867328, guid: 09ce23b11e1a300469fc689a4ee14123, type: 3}
-  - {fileID: 4431107227730713414, guid: c09b4ab098cf49b47aa36e04d994d690, type: 3}
-  - {fileID: 4888499424298627193, guid: 37bc14953bd539b47950bef0f0f2ac9f, type: 3}
-  - {fileID: 1704115573066016221, guid: 693645e86e5366443914264e7addade1, type: 3}
-  - {fileID: 6570994990758233423, guid: fc1afa5c910edad4ab78b9987f31d246, type: 3}
-  - {fileID: 5123363324757990277}
-  - {fileID: 15035954733407063, guid: e7d1ac808e803744599f26077fa36e2e, type: 3}
-  - {fileID: 6744858341183132766, guid: f4b03eb6794dd5d4f8707d25871af650, type: 3}
-  - {fileID: 554546553064843569, guid: c05751710a908a34d9c43b71a8d1b3ab, type: 3}
-  - {fileID: 4112231072027642458, guid: 74168ec41dd8ac54bba33e58b45cecc1, type: 3}
-  - {fileID: 795114097144048306, guid: 2a0c9829d2ad8064485fa90116422da8, type: 3}
-  - {fileID: 5142183035519460629, guid: e839fe236e149cd42bfc5aae012a9ac6, type: 3}
-  - {fileID: 346224831395117632, guid: 6d7af74a809d1cf488f136507dcdb983, type: 3}
-  _particle: {fileID: 5060308207918394386, guid: 8a36de9c41d83a440be199ec28511490, type: 3}
 --- !u!50 &5178220435085683145
 Rigidbody2D:
   serializedVersion: 5
@@ -191,3 +163,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.37888888, y: 0.58111113}
   m_EdgeRadius: 0
+--- !u!114 &4535868527317063220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5123363324757990277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761262b8798d0ed4c9a45e1591672e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  evolutionRobotPart: 5
+  mergePrefabs:
+  - {fileID: 8291921533720867328, guid: 09ce23b11e1a300469fc689a4ee14123, type: 3}
+  - {fileID: 4431107227730713414, guid: c09b4ab098cf49b47aa36e04d994d690, type: 3}
+  - {fileID: 4888499424298627193, guid: 37bc14953bd539b47950bef0f0f2ac9f, type: 3}
+  - {fileID: 1704115573066016221, guid: 693645e86e5366443914264e7addade1, type: 3}
+  - {fileID: 6570994990758233423, guid: fc1afa5c910edad4ab78b9987f31d246, type: 3}
+  - {fileID: 5123363324757990277}
+  - {fileID: 15035954733407063, guid: e7d1ac808e803744599f26077fa36e2e, type: 3}
+  - {fileID: 6744858341183132766, guid: f4b03eb6794dd5d4f8707d25871af650, type: 3}
+  - {fileID: 554546553064843569, guid: c05751710a908a34d9c43b71a8d1b3ab, type: 3}
+  - {fileID: 4112231072027642458, guid: 74168ec41dd8ac54bba33e58b45cecc1, type: 3}
+  - {fileID: 795114097144048306, guid: 2a0c9829d2ad8064485fa90116422da8, type: 3}
+  - {fileID: 5142183035519460629, guid: e839fe236e149cd42bfc5aae012a9ac6, type: 3}
+  - {fileID: 346224831395117632, guid: 6d7af74a809d1cf488f136507dcdb983, type: 3}
+  _particle: {fileID: 5060308207918394386, guid: 8a36de9c41d83a440be199ec28511490, type: 3}
+  audioSource: {fileID: 8682127769266998422, guid: 60cc8492c51831b4c9ce00d9868c7c30, type: 3}
+  metalClank: {fileID: 8300000, guid: d388f3b330d8dc24082b0b95fdb8bbd7, type: 3}

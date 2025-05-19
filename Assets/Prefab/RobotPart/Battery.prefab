@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7173319396601321969}
   - component: {fileID: 1518171190190093745}
-  - component: {fileID: 7311054557376332012}
   - component: {fileID: 8783779514241178846}
   - component: {fileID: 6213283924657849156}
+  - component: {fileID: 7311054557376332012}
   m_Layer: 0
   m_Name: Battery
   m_TagString: Untagged
@@ -90,34 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7311054557376332012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 15035954733407063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 761262b8798d0ed4c9a45e1591672e09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  evolution: 6
-  partsRobot:
-  - {fileID: 8291921533720867328, guid: 09ce23b11e1a300469fc689a4ee14123, type: 3}
-  - {fileID: 4431107227730713414, guid: c09b4ab098cf49b47aa36e04d994d690, type: 3}
-  - {fileID: 4888499424298627193, guid: 37bc14953bd539b47950bef0f0f2ac9f, type: 3}
-  - {fileID: 1704115573066016221, guid: 693645e86e5366443914264e7addade1, type: 3}
-  - {fileID: 6570994990758233423, guid: fc1afa5c910edad4ab78b9987f31d246, type: 3}
-  - {fileID: 5123363324757990277, guid: d28ae2aac562e764ca5a68a4dc27c651, type: 3}
-  - {fileID: 15035954733407063}
-  - {fileID: 6744858341183132766, guid: f4b03eb6794dd5d4f8707d25871af650, type: 3}
-  - {fileID: 554546553064843569, guid: c05751710a908a34d9c43b71a8d1b3ab, type: 3}
-  - {fileID: 4112231072027642458, guid: 74168ec41dd8ac54bba33e58b45cecc1, type: 3}
-  - {fileID: 795114097144048306, guid: 2a0c9829d2ad8064485fa90116422da8, type: 3}
-  - {fileID: 5142183035519460629, guid: e839fe236e149cd42bfc5aae012a9ac6, type: 3}
-  - {fileID: 346224831395117632, guid: 6d7af74a809d1cf488f136507dcdb983, type: 3}
-  _particle: {fileID: 5060308207918394386, guid: 8a36de9c41d83a440be199ec28511490, type: 3}
 --- !u!50 &8783779514241178846
 Rigidbody2D:
   serializedVersion: 5
@@ -196,3 +168,33 @@ PolygonCollider2D:
       - {x: 0.3887927, y: 0.118286595}
       - {x: 0.12582225, y: 0.38805565}
   m_UseDelaunayMesh: 0
+--- !u!114 &7311054557376332012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15035954733407063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761262b8798d0ed4c9a45e1591672e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  evolutionRobotPart: 6
+  mergePrefabs:
+  - {fileID: 8291921533720867328, guid: 09ce23b11e1a300469fc689a4ee14123, type: 3}
+  - {fileID: 4431107227730713414, guid: c09b4ab098cf49b47aa36e04d994d690, type: 3}
+  - {fileID: 4888499424298627193, guid: 37bc14953bd539b47950bef0f0f2ac9f, type: 3}
+  - {fileID: 1704115573066016221, guid: 693645e86e5366443914264e7addade1, type: 3}
+  - {fileID: 6570994990758233423, guid: fc1afa5c910edad4ab78b9987f31d246, type: 3}
+  - {fileID: 5123363324757990277, guid: d28ae2aac562e764ca5a68a4dc27c651, type: 3}
+  - {fileID: 15035954733407063}
+  - {fileID: 6744858341183132766, guid: f4b03eb6794dd5d4f8707d25871af650, type: 3}
+  - {fileID: 554546553064843569, guid: c05751710a908a34d9c43b71a8d1b3ab, type: 3}
+  - {fileID: 4112231072027642458, guid: 74168ec41dd8ac54bba33e58b45cecc1, type: 3}
+  - {fileID: 795114097144048306, guid: 2a0c9829d2ad8064485fa90116422da8, type: 3}
+  - {fileID: 5142183035519460629, guid: e839fe236e149cd42bfc5aae012a9ac6, type: 3}
+  - {fileID: 346224831395117632, guid: 6d7af74a809d1cf488f136507dcdb983, type: 3}
+  _particle: {fileID: 5060308207918394386, guid: 8a36de9c41d83a440be199ec28511490, type: 3}
+  audioSource: {fileID: 8682127769266998422, guid: 60cc8492c51831b4c9ce00d9868c7c30, type: 3}
+  metalClank: {fileID: 8300000, guid: d388f3b330d8dc24082b0b95fdb8bbd7, type: 3}

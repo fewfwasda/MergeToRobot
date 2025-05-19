@@ -7,12 +7,12 @@ public class MoveSpawner : MonoBehaviour
     private float edgesBox = 1.5f;
     private void OnEnable()
     {
-        RobotPart.GameOver += StopMove;
+        RobotPart.StopGame += StopMove;
     }
 
     private void OnDisable()
     {
-        RobotPart.GameOver -= StopMove;
+        RobotPart.StopGame -= StopMove;
     }
     void Update()
     {
@@ -22,8 +22,8 @@ public class MoveSpawner : MonoBehaviour
 
         transform.position = _spawnPos;
     }
-    private void StopMove(bool stop)
+    private void StopMove()
     {
-        GetComponent<MoveSpawner>().enabled = !stop;
+        GetComponent<MoveSpawner>().enabled = false;
     }
 }

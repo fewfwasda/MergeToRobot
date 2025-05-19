@@ -2,34 +2,37 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-public class SpawnDetails : MonoBehaviour
+public class SpawnRobotPart : MonoBehaviour
 {
     private GameObject _detail;
     private SpriteRenderer _spriteDetail;
     private int _indexDetail;
-    private float delay;
+    private float _delay;
     [SerializeField] private List<GameObject> _parts = new List<GameObject>();
     [SerializeField] private List<Sprite> _spritesParts = new List<Sprite>();
+    private bool _isSpawn;
     private void Start()
     {
         _spriteDetail = GetComponent<SpriteRenderer>();
+
+        _isSpawn = true;
+        _delay = 0;
+
         ShowDetail();
-        delay = 0;
     }
     void Update()
     {
         Timer();
-        if ((Input.GetMouseButtonUp(0) || Input.GetMouseButtonUp(1)) && delay <= 0)
+        if (_delay <= 0 && (Input.GetMouseButtonUp(0) || Input.GetMouseButtonUp(1)) && _isSpawn)
         {
-            delay = 0.5f;
+            _delay = 0.3f;
             Spawn();
             ShowDetail();
         }
     }
     private void Timer()
     {
-        
-        delay -= Time.deltaTime;
+        _delay -= Time.deltaTime;
     }
     private void Spawn()
     {
@@ -48,5 +51,18 @@ public class SpawnDetails : MonoBehaviour
     {
         _indexDetail = Random.Range(0, _parts.Count);
         return _indexDetail;
+    }
+    private void OnEnable()
+    {
+        RobotPart.StopGame += StopSpawn;
+    }
+
+    private void OnDisable()
+    {
+        RobotPart.StopGame -= StopSpawn;
+    }
+    private void StopSpawn()
+    {
+        _isSpawn = false;
     }
 }

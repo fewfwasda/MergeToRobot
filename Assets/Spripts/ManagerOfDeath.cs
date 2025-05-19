@@ -4,7 +4,7 @@ using YG;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameOverManager : MonoBehaviour
+public class ManagerOfDeath : MonoBehaviour
 {
     private float _timer = 10;
     public TextMeshProUGUI Timer;
@@ -25,7 +25,7 @@ public class GameOverManager : MonoBehaviour
         if (_startTimer && _timer >= 0)
         {
             _timer -= Time.deltaTime;
-            Timer.text = $"{((int)_timer)}";
+            Timer.text = $"{(int)_timer}";
             GearTimer.fillAmount = _timer / 10;
         }
     }

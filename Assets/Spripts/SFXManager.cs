@@ -1,9 +1,6 @@
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Audio;
 
-public class MusicManager : MonoBehaviour
+public class SFXManager : MonoBehaviour
 {
     public AudioSource audioSource;
     public AudioClip metalClank;
@@ -16,7 +13,7 @@ public class MusicManager : MonoBehaviour
     {
         RobotPart.Merged -= PlaySFX;
     }
-    private void PlaySFX(int addScore)
+    private void PlaySFX()
     {
         audioSource.PlayOneShot(metalClank);
     }

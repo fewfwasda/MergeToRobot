@@ -3,18 +3,18 @@ using UnityEngine;
 using YG;
 public class Score : MonoBehaviour
 {
-    private TextMeshProUGUI _scoreText;
-    public TextMeshProUGUI BestScoreText;
+    [SerializeField] private TextMeshProUGUI _scoreText;
+    [SerializeField] private TextMeshProUGUI BestScoreText;
     private int _score;
     private int _bestScore;
+
     private void Start()
     {
-        _scoreText = GetComponent<TextMeshProUGUI>();
+        _bestScore = YG2.GetState("Scoree");
         _scoreText.text = $"СЧЕТ: {_score}";
-        _bestScore =  YG2.GetState("BestScore");
         BestScoreText.text = $"РЕКОРД: {_bestScore}";
-
     }
+
     private void OnEnable()
     {
         RobotPart.Merged += AddScore;
@@ -22,17 +22,25 @@ public class Score : MonoBehaviour
 
     private void OnDisable()
     {
-        RobotPart.Merged -= AddScore;
+        RobotPart.Merged -= AddScore;        
     }
-    private void AddScore(int addScore)
+
+    private void AddScore()
     {
-        _score+= addScore;
+        // Начисляем случайное значение
+        int delta = Random.Range(3, 10);
+        _score += delta;
         _scoreText.text = $"СЧЕТ: {_score}";
-        if (_score >= _bestScore)
+
+        // Сохраняем, если побит рекорд
+        if (_score > _bestScore)
         {
             _bestScore = _score;
             BestScoreText.text = $"РЕКОРД: {_bestScore}";
-            YG2.SetState("BestScore", _bestScore);
         }
+    }
+    private void SaveScore()
+    {
+        YG2.SetState("Scoree", _bestScore);
     }
 }

@@ -180,8 +180,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 761262b8798d0ed4c9a45e1591672e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evolution: 1
-  partsRobot:
+  evolutionRobotPart: 1
+  mergePrefabs:
   - {fileID: 8291921533720867328, guid: 09ce23b11e1a300469fc689a4ee14123, type: 3}
   - {fileID: 4431107227730713414}
   - {fileID: 4888499424298627193, guid: 37bc14953bd539b47950bef0f0f2ac9f, type: 3}
@@ -196,3 +196,5 @@ MonoBehaviour:
   - {fileID: 5142183035519460629, guid: e839fe236e149cd42bfc5aae012a9ac6, type: 3}
   - {fileID: 346224831395117632, guid: 6d7af74a809d1cf488f136507dcdb983, type: 3}
   _particle: {fileID: 5060308207918394386, guid: 8a36de9c41d83a440be199ec28511490, type: 3}
+  audioSource: {fileID: 8682127769266998422, guid: 60cc8492c51831b4c9ce00d9868c7c30, type: 3}
+  metalClank: {fileID: 8300000, guid: d388f3b330d8dc24082b0b95fdb8bbd7, type: 3}

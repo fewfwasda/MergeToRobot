@@ -10,9 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6981573279481131698}
   - component: {fileID: 1451078510353487689}
-  - component: {fileID: 4321300973710141630}
   - component: {fileID: 5148474530793407282}
-  - component: {fileID: 9183840230349300627}
   m_Layer: 0
   m_Name: MegaRobot
   m_TagString: Untagged
@@ -78,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7329119401045807478, guid: 01fc5c6ac6cf49448ad72a15f9774872, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -90,33 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &4321300973710141630
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 346224831395117632}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: ff09ffe59157c8345b360d8a13c9dce6, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &5148474530793407282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,8 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 761262b8798d0ed4c9a45e1591672e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evolution: 12
-  partsRobot:
+  evolutionRobotPart: 12
+  mergePrefabs:
   - {fileID: 8291921533720867328, guid: 09ce23b11e1a300469fc689a4ee14123, type: 3}
   - {fileID: 4431107227730713414, guid: c09b4ab098cf49b47aa36e04d994d690, type: 3}
   - {fileID: 4888499424298627193, guid: 37bc14953bd539b47950bef0f0f2ac9f, type: 3}
@@ -145,55 +116,3 @@ MonoBehaviour:
   - {fileID: 5142183035519460629, guid: e839fe236e149cd42bfc5aae012a9ac6, type: 3}
   - {fileID: 346224831395117632}
   _particle: {fileID: 5060308207918394386, guid: 8a36de9c41d83a440be199ec28511490, type: 3}
---- !u!60 &9183840230349300627
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 346224831395117632}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.3542857, y: 1.42}
-    newSize: {x: 0.51, y: 0.47333333}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.002363041, y: 0.73677415}
-      - {x: -0.686742, y: 0.22568452}
-      - {x: -0.48370782, y: -0.7244655}
-      - {x: 0.5008173, y: -0.72475153}
-      - {x: 0.6879575, y: 0.22291721}
-  m_UseDelaunayMesh: 0

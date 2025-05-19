@@ -1,57 +1,75 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System;
-using UnityEngine.SceneManagement;
-public enum Evolution
-{
-    Screw,
-    Bolt,
-    Gear,
-    Spring,
-    Arm,
-    Capacitor,
-    Battery,
-    Circuit,
-    ServoMotor,
-    Engine,
-    Body,
-    Robot,
-    MegaRobot
-}
+
 public class RobotPart : MonoBehaviour
 {
-    public static Action<int> Merged;
+    public static Action Merged;
+    public static Action StopGame;
     public static Action<bool> GameOver;
-    [SerializeField] private Evolution evolution = Evolution.Bolt;
-    [SerializeField] private List<GameObject> partsRobot = new List<GameObject>();
+    public static Action<GameObject> FinishGame;
+
+    [SerializeField] private EvolutionRobotPart.Evolution evolutionRobotPart;
+    [SerializeField] private List<GameObject> mergePrefabs = new List<GameObject>();
     [SerializeField] private ParticleSystem _particle;
-    private int _triggerLineOfDeath;
-    private void OnTriggerEnter2D(Collider2D collision)
+    
+    private int _countTriggerLineOfDeadth;
+    private bool _isMerging = false;
+    private int _indexPart;
+
+    private void Start()
     {
-        _triggerLineOfDeath++;
-        if(_triggerLineOfDeath >= 2)
+        _indexPart = (int)evolutionRobotPart;
+        if (_indexPart == mergePrefabs.Count-1)
         {
-            GameOver?.Invoke(true);
+            StopGame?.Invoke();
+            FinishGame?.Invoke(gameObject);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out RobotPart robotPart))
+        if (_isMerging) return;
+        if (collision.gameObject.TryGetComponent(out RobotPart otherPart))
         {
-            if (evolution == robotPart.evolution && GetInstanceID() > collision.gameObject.GetInstanceID() && ((int)evolution) +1 < partsRobot.Count)
+            if (evolutionRobotPart == otherPart.evolutionRobotPart &&
+                _indexPart + 1 < mergePrefabs.Count)
             {
-                robotPart.Upgrate();
                 Destroy(collision.gameObject);
-                Destroy(gameObject);
+
+                _isMerging = true;
+                otherPart._isMerging = true;
+
+                Invoke(nameof(Merge), 0.1f);
             }
         }
     }
-    private void Upgrate()
+    private void Merge()
     {
-        int indexPart = ((int)evolution) + 1;
-        GameObject evolutionPart = partsRobot[indexPart];
-        Instantiate(evolutionPart, transform.position, Quaternion.identity);
-        Merged?.Invoke(indexPart * 5);
+        if (_indexPart + 1 >= mergePrefabs.Count) return;
+        GameObject newPart = mergePrefabs[_indexPart + 1];
+        Instantiate(newPart, transform.position, Quaternion.identity);
+
+        Destroy(gameObject);
+
+        Merged?.Invoke();
+
+        ParticleEffect();
+    }
+    private void ParticleEffect()
+    {
         Instantiate(_particle, transform.position, Quaternion.identity);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        _countTriggerLineOfDeadth++;
+        if (_countTriggerLineOfDeadth >= 2)
+        {
+            GameOver?.Invoke(true);
+            StopGame?.Invoke();
+        }
+    }
+    private void OnDestroy()
+    {
+        CancelInvoke();
     }
 }

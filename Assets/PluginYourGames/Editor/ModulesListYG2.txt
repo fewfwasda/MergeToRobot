@@ -1,3 +1,5 @@
-Authorization v1.0
-InterstitialAdv v1.001
+Authorization v1.01
+EnvirData v1.002
+InterstitialAdv v1.002
 PlayerStats v1.001
+QuitGameEvent v1.001
